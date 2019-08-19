@@ -1,0 +1,60 @@
+{% load static %}
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Home - BCS Pantries</title>
+        <link rel="stylesheet" id="ample-style-css" href="http://wisdompets.com/wp-content/themes/ample/style.css?ver=4.8.3" type="text/css" media="all">
+    </head>
+    <body class="wide">
+        <div id="page" class="hfeed site">
+            <header>
+                <div class="header">
+                    <div class="main-head-wrap inner-wrap clearfix">
+                        <div id="header-logo-image">
+                            <a href="/">
+                                <img src="https://image.flaticon.com/icons/png/512/98/98017.png" alt="Wisdom Pet Medicine">
+                            </a>
+                        </div>
+                        <div id="header-text" class="">
+                            <h1 id="site-title">
+                                <a href="/" title="BCS Pantries" rel="home">BCS Pantries</a>
+                            </h1>
+                            <p>Helping our community find food</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="main-wrapper">
+                <div class="single-page clearfix">
+                    <div class="inner-wrap">
+
+                        <hr>
+                        <div>
+                          <head>
+                            <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+                          </head>
+
+                          <h3>{{ pantry.name|capfirst }}</h3>
+                          <p>{{ pantry.address }}</p>
+                          <h4>Opening schedule:</h4>
+                          <p>Mon: {{ pantry.mon  }}</p>
+                          <p>Tue: {{ pantry.tue }}</p>
+                          <p>Wed: {{ pantry.wed }}</p>
+                          <p>Thur: {{ pantry.thur }}</p>
+                          <p>Fri: {{ pantry.fri }}</p>
+                          <p>Sat: {{ pantry.sat }}</p>
+                          <p>Sun: {{ pantry.sun }}</p>
+                          <p> Website: <a href="{{pantry.website}}">{{pantry.website}}</a></p>
+                          <img src={{ pantry.map_link }}>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer id="colophon">
+                <div class="inner-wrap">
+                    This is a prototype developed by Minh Luu, Adrian and Carlos Trejo. The template is gracefully provided by LinkedIn and Lynda.com.
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

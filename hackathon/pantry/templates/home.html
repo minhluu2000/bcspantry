@@ -1,0 +1,61 @@
+{% load static %}
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Home - BCS Pantries</title>
+        <link rel="stylesheet" id="ample-style-css" href="http://wisdompets.com/wp-content/themes/ample/style.css?ver=4.8.3" type="text/css" media="all">
+    </head>
+    <body class="wide">
+        <div id="page" class="hfeed site">
+            <header>
+                <div class="header">
+                    <div class="main-head-wrap inner-wrap clearfix">
+                        <div id="header-logo-image">
+                            <a href="/">
+                                <img src="https://image.flaticon.com/icons/png/512/98/98017.png" alt="Wisdom Pet Medicine">
+                            </a>
+                        </div>
+                        <div id="header-text" class="">
+                            <h1 id="site-title">
+                                <a href="/" title="BCS Pantries" rel="home">BCS Pantries</a>
+                            </h1>
+                            <p>Helping our community find food</p>
+                        </div>
+                    </div>
+                    <img class="cocs" width=50%; src="https://s3-media3.fl.yelpcdn.com/bphoto/x0LaQZFgjS62xjjCKRKc4g/o.jpg" alt="City of College Station">
+                </div>
+            </header>
+            <div class="main-wrapper">
+                <div class="single-page clearfix">
+                    <div class="inner-wrap">
+                        <p>BCS Pantries collect all the food pantries around the College Station area. Our main goal is to help everyone have the same chance of accessing foods and the basic necessities.</p>
+                        <hr>
+                        <div>
+                          <head>
+                            <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+                          </head>
+
+                          <div>
+                            {% for pantry in pantries %}
+                              <div class="pantryname">
+                                <a href="{% url 'pantry_detail' pantry.id %}">
+                                  <h3 class="name">{{ pantry.name|capfirst }}</h3>
+                                </a>
+                                <p>{{ pantry.address }}</p>
+                                <p>Website: {{ pantry.website }}</p>
+                              </div>
+                            {% endfor %}
+                          </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer id="colophon">
+                <div class="inner-wrap">
+                    This is a prototype developed by Minh Luu, Adrian and Carlos Trejo. The template is gracefully provided by LinkedIn and Lynda.com.
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

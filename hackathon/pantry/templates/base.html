@@ -1,0 +1,20 @@
+{% load static %}
+{% extends "home.html" %}
+{% block content %}
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<p class="header">BCS Pantries</p>
+
+<div class="card">
+  {% for pantry in pantries %}
+    <div class="pantryname">
+      <a href="{% url 'pantry_detail' pantry.id %}">
+        <h3 class="name">{{ pantry.name|capfirst }}</h3>
+      </a>
+      <p>{{ pantry.address }}</p>
+      <p>Website: {{ pantry.website }}</p>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}
